@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DPStatServiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AvailableAppointmentDate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AggreedDate" Type="DateTime" Precision="0" />
+    <Property Name="BranchNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="BNStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AvailableDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="InputFetchAvailableAppointmentDate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BNNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ADAS" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="WorkBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Postcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DPStatServiceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AvailableAppointmentDates" EntityType="Self.AvailableAppointmentDate" />
+    <EntitySet Name="InputFetchAvailableAppointmentDates" EntityType="Self.InputFetchAvailableAppointmentDate" />
+    <FunctionImport Name="UspGetInputFetchAvailableAppointmentDate" ReturnType="Collection(DPStatServiceModel.UspGetInputFetchAvailableAppointmentDate_Result)" />
+    <FunctionImport Name="uspInsertAvailableAppointmentDates">
+      <Parameter Name="AggreedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="BranchNo" Mode="In" Type="String" />
+      <Parameter Name="BNStyle" Mode="In" Type="String" />
+      <Parameter Name="LocationType" Mode="In" Type="String" />
+      <Parameter Name="AvailableDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="UspGetInputFetchAvailableAppointmentDate_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="BNNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LocationType" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ADAS" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="WorkBranch" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="WorkType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Postcode" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

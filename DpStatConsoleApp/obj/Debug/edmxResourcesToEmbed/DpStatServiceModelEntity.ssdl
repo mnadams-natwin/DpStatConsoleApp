@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DPStatServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DPStatService.dbo.AvailableAppointmentDates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AvailableAppointmentDates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AggreedDate" Type="date" />
+    <Property Name="BranchNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="BNStyle" Type="varchar" MaxLength="50" />
+    <Property Name="LocationType" Type="varchar" MaxLength="10" />
+    <Property Name="AvailableDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InputFetchAvailableAppointmentDate">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BNNo" Type="varchar" MaxLength="50" />
+    <Property Name="LocationType" Type="varchar" MaxLength="10" />
+    <Property Name="ADAS" Type="nchar" MaxLength="10" />
+    <Property Name="WorkBranch" Type="varchar" MaxLength="50" />
+    <Property Name="WorkType" Type="varchar" MaxLength="50" />
+    <Property Name="Postcode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="UspGetInputFetchAvailableAppointmentDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspInsertAvailableAppointmentDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="AggreedDate" Type="date" Mode="In" />
+    <Parameter Name="BranchNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="BNStyle" Type="varchar" Mode="In" />
+    <Parameter Name="LocationType" Type="varchar" Mode="In" />
+    <Parameter Name="AvailableDate" Type="date" Mode="In" />
+  </Function>
+  <EntityContainer Name="DPStatServiceModelStoreContainer">
+    <EntitySet Name="AvailableAppointmentDates" EntityType="Self.AvailableAppointmentDates" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AvailableAppointmentDates].[ID] AS [ID], 
+    [AvailableAppointmentDates].[AggreedDate] AS [AggreedDate], 
+    [AvailableAppointmentDates].[BranchNo] AS [BranchNo], 
+    [AvailableAppointmentDates].[BNStyle] AS [BNStyle], 
+    [AvailableAppointmentDates].[LocationType] AS [LocationType], 
+    [AvailableAppointmentDates].[AvailableDate] AS [AvailableDate]
+    FROM [dbo].[AvailableAppointmentDates] AS [AvailableAppointmentDates]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="InputFetchAvailableAppointmentDate" EntityType="Self.InputFetchAvailableAppointmentDate" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InputFetchAvailableAppointmentDate].[ID] AS [ID], 
+    [InputFetchAvailableAppointmentDate].[BNNo] AS [BNNo], 
+    [InputFetchAvailableAppointmentDate].[LocationType] AS [LocationType], 
+    [InputFetchAvailableAppointmentDate].[ADAS] AS [ADAS], 
+    [InputFetchAvailableAppointmentDate].[WorkBranch] AS [WorkBranch], 
+    [InputFetchAvailableAppointmentDate].[WorkType] AS [WorkType], 
+    [InputFetchAvailableAppointmentDate].[Postcode] AS [Postcode]
+    FROM [dbo].[InputFetchAvailableAppointmentDate] AS [InputFetchAvailableAppointmentDate]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

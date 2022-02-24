@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DPStatServiceModelStoreContainer" CdmEntityContainer="DPStatServiceEntities">
+    <EntitySetMapping Name="AvailableAppointmentDates">
+      <EntityTypeMapping TypeName="DPStatServiceModel.AvailableAppointmentDate">
+        <MappingFragment StoreEntitySet="AvailableAppointmentDates">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AggreedDate" ColumnName="AggreedDate" />
+          <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+          <ScalarProperty Name="BNStyle" ColumnName="BNStyle" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InputFetchAvailableAppointmentDates">
+      <EntityTypeMapping TypeName="DPStatServiceModel.InputFetchAvailableAppointmentDate">
+        <MappingFragment StoreEntitySet="InputFetchAvailableAppointmentDate">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="ADAS" ColumnName="ADAS" />
+          <ScalarProperty Name="WorkBranch" ColumnName="WorkBranch" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UspGetInputFetchAvailableAppointmentDate" FunctionName="DPStatServiceModel.Store.UspGetInputFetchAvailableAppointmentDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DPStatServiceModel.UspGetInputFetchAvailableAppointmentDate_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+          <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+          <ScalarProperty Name="ADAS" ColumnName="ADAS" />
+          <ScalarProperty Name="WorkBranch" ColumnName="WorkBranch" />
+          <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspInsertAvailableAppointmentDates" FunctionName="DPStatServiceModel.Store.uspInsertAvailableAppointmentDates" />
+  </EntityContainerMapping>
+</Mapping>
