@@ -17,13 +17,15 @@ namespace DpStatConsoleApp.Repository
         /// <summary>
         /// uspInsertAvailableAppointmentDates insert the results from the API gateway 
         /// </summary>
-        /// <param name="AggreedDate"></param>
+        /// <param name="AgreedDate"></param>
         /// <param name="BranchNo"></param>
         /// <param name="BNStyle"></param>
         /// <param name="LocationType"></param>
         /// <param name="AvailableDate"></param>
+        /// /// <param name="ADASType"></param>
+        /// /// <param name="WorkType"></param>
         /// <returns></returns>
-        public int uspInsertAvailableAppointmentDates(System.DateTime AggreedDate, string BranchNo, string BNStyle, string LocationType, System.DateTime AvailableDate)
+        public int uspInsertAvailableAppointmentDates(System.DateTime AgreedDate, string BranchNo, string BNNo, string LocationType, System.DateTime AvailableDate,  string ADASType, string WorkType)
         {
             log.Debug(System.Reflection.MethodBase.GetCurrentMethod().ToString());
             int rowsAffected = 0;
@@ -34,11 +36,13 @@ namespace DpStatConsoleApp.Repository
                 SqlCommand com = new SqlCommand("uspInsertAvailableAppointmentDates", con);
                 com.CommandType = CommandType.StoredProcedure;
 
-                com.Parameters.AddWithValue("@AggreedDate", ((object)AggreedDate) ?? DBNull.Value);
+                com.Parameters.AddWithValue("@AgreedDate", ((object)AgreedDate) ?? DBNull.Value);
                 com.Parameters.AddWithValue("@BranchNo", ((object)BranchNo) ?? DBNull.Value);
-                com.Parameters.AddWithValue("@BNStyle", ((object)BNStyle) ?? DBNull.Value);
+                com.Parameters.AddWithValue("@BNNo", ((object)BNNo) ?? DBNull.Value);               
                 com.Parameters.AddWithValue("@LocationType", ((object)LocationType) ?? DBNull.Value);
                 com.Parameters.AddWithValue("@AvailableDate", ((object)AvailableDate) ?? DBNull.Value);
+                com.Parameters.AddWithValue("@ADASType", ((object)ADASType) ?? DBNull.Value);
+                com.Parameters.AddWithValue("@WorkType", ((object)WorkType) ?? DBNull.Value);
 
                 con.Open();
                 rowsAffected = com.ExecuteNonQuery();

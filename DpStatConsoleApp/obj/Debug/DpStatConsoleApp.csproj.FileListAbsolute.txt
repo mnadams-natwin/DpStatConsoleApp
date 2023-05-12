@@ -1,14 +1,69 @@
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe.config
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe.manifest
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.application
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.pdb
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.dll
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.dll
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.dll
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.dll
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.xml
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.xml
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.xml
-C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.xml
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.exe.manifest
+C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.application
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.exe
 C:\Users\MNAdams\Documents\Visual Studio 2013\Projects\Digital Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.pdb
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe.config
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.pdb
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.AssemblyReference.cache
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.CopyComplete
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.exe
+C:\Users\mnadams\source\repos\Digital-Platform\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.pdb
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe.config
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.exe
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\DpStatConsoleApp.pdb
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Dapper.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\log4net.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\RestSharp.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.AssemblyReference.cache
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.csproj.CopyComplete
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.exe
+C:\Users\mnadams\source\repos\DpStatConsoleApp\DpStatConsoleApp\obj\Debug\DpStatConsoleApp.pdb

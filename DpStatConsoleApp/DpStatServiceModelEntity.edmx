@@ -4,22 +4,109 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DPStatServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DPStatServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DPStatService.dbo.AvailableAppointmentDates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DpStatTest.dbo.ADASTypeParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ADASTypeParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ADASType" />
+            <PropertyRef Name="ADASTypeDescription" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADASType" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="ADASTypeDescription" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AreaParam">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="int" Nullable="false" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ISORegion" Type="varchar" MaxLength="12" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.AvailableAppointmentDates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="AvailableAppointmentDates">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AggreedDate" Type="date" />
+          <Property Name="AgreedDate" Type="date" />
           <Property Name="BranchNo" Type="nvarchar" MaxLength="10" />
-          <Property Name="BNStyle" Type="varchar" MaxLength="50" />
+          <Property Name="BNNo" Type="nvarchar" MaxLength="10" />
           <Property Name="LocationType" Type="varchar" MaxLength="10" />
           <Property Name="AvailableDate" Type="date" />
+          <Property Name="ADASType" Type="nchar" MaxLength="10" />
+          <Property Name="WorkType" Type="varchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'DpStatTest.dbo.AvailableAppointmentDates_bkup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AvailableAppointmentDates_bkup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgreedDate" Type="date" />
+          <Property Name="BranchNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="BNNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="LocationType" Type="varchar" MaxLength="10" />
+          <Property Name="AvailableDate" Type="date" />
+          <Property Name="ADASType" Type="nchar" MaxLength="10" />
+          <Property Name="WorkType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BankHolidays">
+          <Key>
+            <PropertyRef Name="HolidayDate" />
+          </Key>
+          <Property Name="HolidayDate" Type="date" Nullable="false" />
+          <Property Name="HolidayDescription" Type="varchar" MaxLength="255" />
+          <Property Name="HolidayISORegions" Type="varchar" MaxLength="125" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.BNNoParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BNNoParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BNNo" Type="varchar" MaxLength="20" />
+          <Property Name="BNName" Type="varchar" MaxLength="255" />
+          <Property Name="BNStyle" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.BNStyleParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BNStyleParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Style" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Style" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.BranchMemberParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BranchMemberParam">
+          <Key>
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="MemberNo" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ShortName" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DpStatTest.dbo.BranchParams' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="BranchParams">
+          <Property Name="Branch_No" Type="nvarchar" MaxLength="255" />
+          <Property Name="MB_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Branch_Na" Type="nvarchar" MaxLength="255" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="255" />
+          <Property Name="Area_ID" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.InputFetchAvailableAppointmentDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="InputFetchAvailableAppointmentDate">
           <Key>
             <PropertyRef Name="ID" />
@@ -32,24 +119,182 @@ warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDa
           <Property Name="WorkType" Type="varchar" MaxLength="50" />
           <Property Name="Postcode" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Function Name="UspGetInputFetchAvailableAppointmentDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.LocationTypeParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LocationTypeParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationType" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.WorkTypeLHSParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WorkTypeLHSParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="WorkTypeLHS" />
+            <PropertyRef Name="WorkTypeLHSDescription" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkTypeLHS" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="WorkTypeLHSDescription" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.WorkTypeRHSParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WorkTypeRHSParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="WorkTypeRHS" />
+            <PropertyRef Name="WorkTypeRHSDescription" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WorkTypeRHS" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="WorkTypeRHSDescription" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DpStatTest.dbo.AvailableDates-BASE_view' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AvailableDates-BASE_view">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="AgreedDate" Type="date" />
+          <Property Name="BranchNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="ADASType" Type="nchar" MaxLength="10" />
+          <Property Name="ADASTypeDescription" Type="varchar" MaxLength="255" />
+          <Property Name="WorkType" Type="varchar" MaxLength="50" />
+          <Property Name="WorkTypeLHSDescription" Type="varchar" MaxLength="255" />
+          <Property Name="WorkTypeRHSDescription" Type="varchar" MaxLength="255" />
+          <Property Name="Branch Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Member Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Member Description" Type="varchar" MaxLength="50" />
+          <Property Name="Member Short Name" Type="varchar" MaxLength="30" />
+          <Property Name="BNNo" Type="nvarchar" MaxLength="10" />
+          <Property Name="BNStyle" Type="int" />
+          <Property Name="BNName" Type="varchar" MaxLength="255" />
+          <Property Name="BNNo Style Description" Type="varchar" MaxLength="255" />
+          <Property Name="Location Type Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="AreaID" Type="int" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ISORegion" Type="varchar" MaxLength="12" />
+          <Property Name="LocationType" Type="varchar" MaxLength="10" />
+          <Property Name="AvailableDate" Type="date" />
+          <Property Name="Working Days" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DpStatTest.dbo.AvailableDates-Branch_view' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AvailableDates-Branch_view">
+          <Property Name="Branch Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Member Description" Type="varchar" MaxLength="50" />
+          <Property Name="BNNo Style Description" Type="varchar" MaxLength="255" />
+          <Property Name="AgreedDate" Type="date" />
+          <Property Name="1st Available Appointment" Type="date" />
+          <Property Name="Working Days" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DpStatTest.dbo.AvailableDates-Mobile_view' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AvailableDates-Mobile_view">
+          <Property Name="Branch Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Member Description" Type="varchar" MaxLength="50" />
+          <Property Name="BNNo Style Description" Type="varchar" MaxLength="255" />
+          <Property Name="AgreedDate" Type="date" />
+          <Property Name="1st Available Appointment" Type="date" />
+          <Property Name="Working Days" Type="int" />
+        </EntityType>-->
+        <Function Name="fn_BankHoliday" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="date" Type="date" Mode="In" />
+        </Function>
+        <Function Name="fn_EasterMondayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_EasterSundayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="char" Mode="In" />
+        </Function>
+        <Function Name="fn_GoodFridayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_MayBankHolidayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_SpringBankHolidayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="fn_SummerBankHolidayByYear" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="smalldatetime">
+          <Parameter Name="Year" Type="int" Mode="In" />
+        </Function>
+        <Function Name="udf_CountWorkingDays" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="StartDate" Type="datetime" Mode="In" />
+          <Parameter Name="EndDate" Type="datetime" Mode="In" />
+          <Parameter Name="ISORegion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="uspDropCreatePopulateBankHolidayTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="uspGetInputFetchAvailableAppointmentDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="uspInsertAvailableAppointmentDates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="AggreedDate" Type="date" Mode="In" />
+          <Parameter Name="AgreedDate" Type="date" Mode="In" />
           <Parameter Name="BranchNo" Type="nvarchar" Mode="In" />
-          <Parameter Name="BNStyle" Type="varchar" Mode="In" />
+          <Parameter Name="BNNo" Type="nvarchar" Mode="In" />
           <Parameter Name="LocationType" Type="varchar" Mode="In" />
           <Parameter Name="AvailableDate" Type="date" Mode="In" />
+          <Parameter Name="ADASType" Type="varchar" Mode="In" />
+          <Parameter Name="WorkType" Type="nchar" Mode="In" />
         </Function>
         <EntityContainer Name="DPStatServiceModelStoreContainer">
+          <EntitySet Name="AreaParam" EntityType="Self.AreaParam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BankHolidays" EntityType="Self.BankHolidays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADASTypeParam" EntityType="Self.ADASTypeParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ADASTypeParam].[ID] AS [ID], 
+    [ADASTypeParam].[ADASType] AS [ADASType], 
+    [ADASTypeParam].[ADASTypeDescription] AS [ADASTypeDescription]
+    FROM [dbo].[ADASTypeParam] AS [ADASTypeParam]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="AvailableAppointmentDates" EntityType="Self.AvailableAppointmentDates" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [AvailableAppointmentDates].[ID] AS [ID], 
-    [AvailableAppointmentDates].[AggreedDate] AS [AggreedDate], 
+    [AvailableAppointmentDates].[AgreedDate] AS [AgreedDate], 
     [AvailableAppointmentDates].[BranchNo] AS [BranchNo], 
-    [AvailableAppointmentDates].[BNStyle] AS [BNStyle], 
+    [AvailableAppointmentDates].[BNNo] AS [BNNo], 
     [AvailableAppointmentDates].[LocationType] AS [LocationType], 
-    [AvailableAppointmentDates].[AvailableDate] AS [AvailableDate]
+    [AvailableAppointmentDates].[AvailableDate] AS [AvailableDate], 
+    [AvailableAppointmentDates].[ADASType] AS [ADASType], 
+    [AvailableAppointmentDates].[WorkType] AS [WorkType]
     FROM [dbo].[AvailableAppointmentDates] AS [AvailableAppointmentDates]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AvailableAppointmentDates_bkup" EntityType="Self.AvailableAppointmentDates_bkup" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AvailableAppointmentDates_bkup].[ID] AS [ID], 
+    [AvailableAppointmentDates_bkup].[AgreedDate] AS [AgreedDate], 
+    [AvailableAppointmentDates_bkup].[BranchNo] AS [BranchNo], 
+    [AvailableAppointmentDates_bkup].[BNNo] AS [BNNo], 
+    [AvailableAppointmentDates_bkup].[LocationType] AS [LocationType], 
+    [AvailableAppointmentDates_bkup].[AvailableDate] AS [AvailableDate], 
+    [AvailableAppointmentDates_bkup].[ADASType] AS [ADASType], 
+    [AvailableAppointmentDates_bkup].[WorkType] AS [WorkType]
+    FROM [dbo].[AvailableAppointmentDates_bkup] AS [AvailableAppointmentDates_bkup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BNNoParam" EntityType="Self.BNNoParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BNNoParam].[ID] AS [ID], 
+    [BNNoParam].[BNNo] AS [BNNo], 
+    [BNNoParam].[BNName] AS [BNName], 
+    [BNNoParam].[BNStyle] AS [BNStyle]
+    FROM [dbo].[BNNoParam] AS [BNNoParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BNStyleParam" EntityType="Self.BNStyleParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BNStyleParam].[ID] AS [ID], 
+    [BNStyleParam].[Style] AS [Style], 
+    [BNStyleParam].[Description] AS [Description]
+    FROM [dbo].[BNStyleParam] AS [BNStyleParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BranchMemberParam" EntityType="Self.BranchMemberParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BranchMemberParam].[MemberNo] AS [MemberNo], 
+    [BranchMemberParam].[Name] AS [Name], 
+    [BranchMemberParam].[ShortName] AS [ShortName]
+    FROM [dbo].[BranchMemberParam] AS [BranchMemberParam]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="InputFetchAvailableAppointmentDate" EntityType="Self.InputFetchAvailableAppointmentDate" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -62,22 +307,182 @@ warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDa
     [InputFetchAvailableAppointmentDate].[Postcode] AS [Postcode]
     FROM [dbo].[InputFetchAvailableAppointmentDate] AS [InputFetchAvailableAppointmentDate]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="LocationTypeParam" EntityType="Self.LocationTypeParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LocationTypeParam].[ID] AS [ID], 
+    [LocationTypeParam].[Description] AS [Description], 
+    [LocationTypeParam].[LocationType] AS [LocationType]
+    FROM [dbo].[LocationTypeParam] AS [LocationTypeParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorkTypeLHSParam" EntityType="Self.WorkTypeLHSParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WorkTypeLHSParam].[ID] AS [ID], 
+    [WorkTypeLHSParam].[WorkTypeLHS] AS [WorkTypeLHS], 
+    [WorkTypeLHSParam].[WorkTypeLHSDescription] AS [WorkTypeLHSDescription]
+    FROM [dbo].[WorkTypeLHSParam] AS [WorkTypeLHSParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorkTypeRHSParam" EntityType="Self.WorkTypeRHSParam" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WorkTypeRHSParam].[ID] AS [ID], 
+    [WorkTypeRHSParam].[WorkTypeRHS] AS [WorkTypeRHS], 
+    [WorkTypeRHSParam].[WorkTypeRHSDescription] AS [WorkTypeRHSDescription]
+    FROM [dbo].[WorkTypeRHSParam] AS [WorkTypeRHSParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AvailableDates-BASE_view" EntityType="Self.AvailableDates-BASE_view" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [AvailableDates-BASE_view].[ID] AS [ID], 
+    [AvailableDates-BASE_view].[AgreedDate] AS [AgreedDate], 
+    [AvailableDates-BASE_view].[BranchNo] AS [BranchNo], 
+    [AvailableDates-BASE_view].[ADASType] AS [ADASType], 
+    [AvailableDates-BASE_view].[ADASTypeDescription] AS [ADASTypeDescription], 
+    [AvailableDates-BASE_view].[WorkType] AS [WorkType], 
+    [AvailableDates-BASE_view].[WorkTypeLHSDescription] AS [WorkTypeLHSDescription], 
+    [AvailableDates-BASE_view].[WorkTypeRHSDescription] AS [WorkTypeRHSDescription], 
+    [AvailableDates-BASE_view].[Branch Name] AS [Branch Name], 
+    [AvailableDates-BASE_view].[Member Number] AS [Member Number], 
+    [AvailableDates-BASE_view].[Member Description] AS [Member Description], 
+    [AvailableDates-BASE_view].[Member Short Name] AS [Member Short Name], 
+    [AvailableDates-BASE_view].[BNNo] AS [BNNo], 
+    [AvailableDates-BASE_view].[BNStyle] AS [BNStyle], 
+    [AvailableDates-BASE_view].[BNName] AS [BNName], 
+    [AvailableDates-BASE_view].[BNNo Style Description] AS [BNNo Style Description], 
+    [AvailableDates-BASE_view].[Location Type Description] AS [Location Type Description], 
+    [AvailableDates-BASE_view].[AreaID] AS [AreaID], 
+    [AvailableDates-BASE_view].[AreaName] AS [AreaName], 
+    [AvailableDates-BASE_view].[ISORegion] AS [ISORegion], 
+    [AvailableDates-BASE_view].[LocationType] AS [LocationType], 
+    [AvailableDates-BASE_view].[AvailableDate] AS [AvailableDate], 
+    [AvailableDates-BASE_view].[Working Days] AS [Working Days]
+    FROM [dbo].[AvailableDates-BASE_view] AS [AvailableDates-BASE_view]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DPStatServiceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DPStatServiceEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="UspGetInputFetchAvailableAppointmentDate" ReturnType="Collection(DPStatServiceModel.UspGetInputFetchAvailableAppointmentDate_Result)" />
+          <FunctionImport Name="uspInsertAvailableAppointmentDates">
+            <Parameter Name="AgreedDate" Mode="In" Type="DateTime" />
+            <Parameter Name="BranchNo" Mode="In" Type="String" />
+            <Parameter Name="BNNo" Mode="In" Type="String" />
+            <Parameter Name="LocationType" Mode="In" Type="String" />
+            <Parameter Name="AvailableDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ADASType" Mode="In" Type="String" />
+            <Parameter Name="WorkType" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="uspGetInputFetchAvailableAppointmentDate1" ReturnType="Collection(DPStatServiceModel.uspGetInputFetchAvailableAppointmentDate1_Result)" />
+          <EntitySet Name="AreaParams" EntityType="DPStatServiceModel.AreaParam" />
+          <EntitySet Name="BankHolidays" EntityType="DPStatServiceModel.BankHoliday" />
+          <EntitySet Name="ADASTypeParams" EntityType="DPStatServiceModel.ADASTypeParam" />
+          <EntitySet Name="AvailableAppointmentDates" EntityType="DPStatServiceModel.AvailableAppointmentDate" />
+          <EntitySet Name="AvailableAppointmentDates_bkup" EntityType="DPStatServiceModel.AvailableAppointmentDates_bkup" />
+          <EntitySet Name="BNNoParams" EntityType="DPStatServiceModel.BNNoParam" />
+          <EntitySet Name="BNStyleParams" EntityType="DPStatServiceModel.BNStyleParam" />
+          <EntitySet Name="BranchMemberParams" EntityType="DPStatServiceModel.BranchMemberParam" />
+          <EntitySet Name="InputFetchAvailableAppointmentDates" EntityType="DPStatServiceModel.InputFetchAvailableAppointmentDate" />
+          <EntitySet Name="LocationTypeParams" EntityType="DPStatServiceModel.LocationTypeParam" />
+          <EntitySet Name="WorkTypeLHSParams" EntityType="DPStatServiceModel.WorkTypeLHSParam" />
+          <EntitySet Name="WorkTypeRHSParams" EntityType="DPStatServiceModel.WorkTypeRHSParam" />
+          <EntitySet Name="AvailableDates_BASE_view" EntityType="DPStatServiceModel.AvailableDates_BASE_view" />
+          <FunctionImport Name="uspDropCreatePopulateBankHolidayTable" ReturnType="Collection(String)" />
+          </EntityContainer>
+        <ComplexType Name="UspGetInputFetchAvailableAppointmentDate_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="BNNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LocationType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ADAS" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="WorkBranch" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="WorkType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Postcode" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="uspGetInputFetchAvailableAppointmentDate1_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="BNNo" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="LocationType" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ADAS" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="WorkBranch" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="WorkType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Postcode" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="AreaParam">
+          <Key>
+            <PropertyRef Name="AreaID" />
+          </Key>
+          <Property Name="AreaID" Type="Int32" Nullable="false" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISORegion" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BankHoliday">
+          <Key>
+            <PropertyRef Name="HolidayDate" />
+          </Key>
+          <Property Name="HolidayDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HolidayDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HolidayISORegions" Type="String" MaxLength="125" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ADASTypeParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="ADASType" />
+            <PropertyRef Name="ADASTypeDescription" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADASType" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ADASTypeDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="AvailableAppointmentDate">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AggreedDate" Type="DateTime" Precision="0" />
+          <Property Name="AgreedDate" Type="DateTime" Precision="0" />
           <Property Name="BranchNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="BNStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BNNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="AvailableDate" Type="DateTime" Precision="0" />
+          <Property Name="ADASType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AvailableAppointmentDates_bkup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgreedDate" Type="DateTime" Precision="0" />
+          <Property Name="BranchNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BNNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AvailableDate" Type="DateTime" Precision="0" />
+          <Property Name="ADASType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BNNoParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BNNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BNName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BNStyle" Type="Int32" />
+        </EntityType>
+        <EntityType Name="BNStyleParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Style" />
+            <PropertyRef Name="Description" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Style" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BranchMemberParam">
+          <Key>
+            <PropertyRef Name="MemberNo" />
+          </Key>
+          <Property Name="MemberNo" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ShortName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="InputFetchAvailableAppointmentDate">
           <Key>
@@ -91,61 +496,72 @@ warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDa
           <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Postcode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="DPStatServiceEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="AvailableAppointmentDates" EntityType="Self.AvailableAppointmentDate" />
-          <EntitySet Name="InputFetchAvailableAppointmentDates" EntityType="Self.InputFetchAvailableAppointmentDate" />
-          <FunctionImport Name="UspGetInputFetchAvailableAppointmentDate" ReturnType="Collection(DPStatServiceModel.UspGetInputFetchAvailableAppointmentDate_Result)" />
-          <FunctionImport Name="uspInsertAvailableAppointmentDates">
-            <Parameter Name="AggreedDate" Mode="In" Type="DateTime" />
-            <Parameter Name="BranchNo" Mode="In" Type="String" />
-            <Parameter Name="BNStyle" Mode="In" Type="String" />
-            <Parameter Name="LocationType" Mode="In" Type="String" />
-            <Parameter Name="AvailableDate" Mode="In" Type="DateTime" />
-          </FunctionImport>
-        </EntityContainer>
-        <ComplexType Name="UspGetInputFetchAvailableAppointmentDate_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="BNNo" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="LocationType" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="ADAS" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="WorkBranch" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="WorkType" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="Postcode" Nullable="true" MaxLength="50" />
-        </ComplexType>
-      </Schema>
+        <EntityType Name="LocationTypeParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WorkTypeLHSParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="WorkTypeLHS" />
+            <PropertyRef Name="WorkTypeLHSDescription" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkTypeLHS" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="WorkTypeLHSDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WorkTypeRHSParam">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="WorkTypeRHS" />
+            <PropertyRef Name="WorkTypeRHSDescription" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WorkTypeRHS" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="WorkTypeRHSDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AvailableDates_BASE_view">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="AgreedDate" Type="DateTime" Precision="0" />
+          <Property Name="BranchNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ADASType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ADASTypeDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WorkType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTypeLHSDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTypeRHSDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Branch_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Member_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Member_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Member_Short_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BNNo" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BNStyle" Type="Int32" />
+          <Property Name="BNName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BNNo_Style_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Location_Type_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaID" Type="Int32" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISORegion" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="LocationType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AvailableDate" Type="DateTime" Precision="0" />
+          <Property Name="Working_Days" Type="Int32" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DPStatServiceModelStoreContainer" CdmEntityContainer="DPStatServiceEntities">
-          <EntitySetMapping Name="AvailableAppointmentDates">
-            <EntityTypeMapping TypeName="DPStatServiceModel.AvailableAppointmentDate">
-              <MappingFragment StoreEntitySet="AvailableAppointmentDates">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AggreedDate" ColumnName="AggreedDate" />
-                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
-                <ScalarProperty Name="BNStyle" ColumnName="BNStyle" />
-                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
-                <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="InputFetchAvailableAppointmentDates">
-            <EntityTypeMapping TypeName="DPStatServiceModel.InputFetchAvailableAppointmentDate">
-              <MappingFragment StoreEntitySet="InputFetchAvailableAppointmentDate">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
-                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
-                <ScalarProperty Name="ADAS" ColumnName="ADAS" />
-                <ScalarProperty Name="WorkBranch" ColumnName="WorkBranch" />
-                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
-                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="UspGetInputFetchAvailableAppointmentDate" FunctionName="DPStatServiceModel.Store.UspGetInputFetchAvailableAppointmentDate">
+          <FunctionImportMapping FunctionImportName="uspInsertAvailableAppointmentDates" FunctionName="DPStatServiceModel.Store.uspInsertAvailableAppointmentDates" />
+          <FunctionImportMapping FunctionImportName="uspGetInputFetchAvailableAppointmentDate1" FunctionName="DPStatServiceModel.Store.uspGetInputFetchAvailableAppointmentDate">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="DPStatServiceModel.UspGetInputFetchAvailableAppointmentDate_Result">
+              <ComplexTypeMapping TypeName="DPStatServiceModel.uspGetInputFetchAvailableAppointmentDate1_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="BNNo" ColumnName="BNNo" />
                 <ScalarProperty Name="LocationType" ColumnName="LocationType" />
@@ -156,8 +572,160 @@ warning 6002: The table/view 'DPStatService.dbo.InputFetchAvailableAppointmentDa
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="uspInsertAvailableAppointmentDates" FunctionName="DPStatServiceModel.Store.uspInsertAvailableAppointmentDates" />
-        </EntityContainerMapping>
+          <EntitySetMapping Name="AreaParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.AreaParam">
+              <MappingFragment StoreEntitySet="AreaParam">
+                <ScalarProperty Name="ISORegion" ColumnName="ISORegion" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BankHolidays">
+            <EntityTypeMapping TypeName="DPStatServiceModel.BankHoliday">
+              <MappingFragment StoreEntitySet="BankHolidays">
+                <ScalarProperty Name="HolidayISORegions" ColumnName="HolidayISORegions" />
+                <ScalarProperty Name="HolidayDescription" ColumnName="HolidayDescription" />
+                <ScalarProperty Name="HolidayDate" ColumnName="HolidayDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADASTypeParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.ADASTypeParam">
+              <MappingFragment StoreEntitySet="ADASTypeParam">
+                <ScalarProperty Name="ADASTypeDescription" ColumnName="ADASTypeDescription" />
+                <ScalarProperty Name="ADASType" ColumnName="ADASType" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvailableAppointmentDates">
+            <EntityTypeMapping TypeName="DPStatServiceModel.AvailableAppointmentDate">
+              <MappingFragment StoreEntitySet="AvailableAppointmentDates">
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="ADASType" ColumnName="ADASType" />
+                <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+                <ScalarProperty Name="AgreedDate" ColumnName="AgreedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvailableAppointmentDates_bkup">
+            <EntityTypeMapping TypeName="DPStatServiceModel.AvailableAppointmentDates_bkup">
+              <MappingFragment StoreEntitySet="AvailableAppointmentDates_bkup">
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="ADASType" ColumnName="ADASType" />
+                <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+                <ScalarProperty Name="AgreedDate" ColumnName="AgreedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNNoParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.BNNoParam">
+              <MappingFragment StoreEntitySet="BNNoParam">
+                <ScalarProperty Name="BNStyle" ColumnName="BNStyle" />
+                <ScalarProperty Name="BNName" ColumnName="BNName" />
+                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BNStyleParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.BNStyleParam">
+              <MappingFragment StoreEntitySet="BNStyleParam">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Style" ColumnName="Style" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BranchMemberParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.BranchMemberParam">
+              <MappingFragment StoreEntitySet="BranchMemberParam">
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MemberNo" ColumnName="MemberNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InputFetchAvailableAppointmentDates">
+            <EntityTypeMapping TypeName="DPStatServiceModel.InputFetchAvailableAppointmentDate">
+              <MappingFragment StoreEntitySet="InputFetchAvailableAppointmentDate">
+                <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="WorkBranch" ColumnName="WorkBranch" />
+                <ScalarProperty Name="ADAS" ColumnName="ADAS" />
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationTypeParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.LocationTypeParam">
+              <MappingFragment StoreEntitySet="LocationTypeParam">
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkTypeLHSParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.WorkTypeLHSParam">
+              <MappingFragment StoreEntitySet="WorkTypeLHSParam">
+                <ScalarProperty Name="WorkTypeLHSDescription" ColumnName="WorkTypeLHSDescription" />
+                <ScalarProperty Name="WorkTypeLHS" ColumnName="WorkTypeLHS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkTypeRHSParams">
+            <EntityTypeMapping TypeName="DPStatServiceModel.WorkTypeRHSParam">
+              <MappingFragment StoreEntitySet="WorkTypeRHSParam">
+                <ScalarProperty Name="WorkTypeRHSDescription" ColumnName="WorkTypeRHSDescription" />
+                <ScalarProperty Name="WorkTypeRHS" ColumnName="WorkTypeRHS" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AvailableDates_BASE_view">
+            <EntityTypeMapping TypeName="DPStatServiceModel.AvailableDates_BASE_view">
+              <MappingFragment StoreEntitySet="AvailableDates-BASE_view">
+                <ScalarProperty Name="Working_Days" ColumnName="Working Days" />
+                <ScalarProperty Name="AvailableDate" ColumnName="AvailableDate" />
+                <ScalarProperty Name="LocationType" ColumnName="LocationType" />
+                <ScalarProperty Name="ISORegion" ColumnName="ISORegion" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+                <ScalarProperty Name="Location_Type_Description" ColumnName="Location Type Description" />
+                <ScalarProperty Name="BNNo_Style_Description" ColumnName="BNNo Style Description" />
+                <ScalarProperty Name="BNName" ColumnName="BNName" />
+                <ScalarProperty Name="BNStyle" ColumnName="BNStyle" />
+                <ScalarProperty Name="BNNo" ColumnName="BNNo" />
+                <ScalarProperty Name="Member_Short_Name" ColumnName="Member Short Name" />
+                <ScalarProperty Name="Member_Description" ColumnName="Member Description" />
+                <ScalarProperty Name="Member_Number" ColumnName="Member Number" />
+                <ScalarProperty Name="Branch_Name" ColumnName="Branch Name" />
+                <ScalarProperty Name="WorkTypeRHSDescription" ColumnName="WorkTypeRHSDescription" />
+                <ScalarProperty Name="WorkTypeLHSDescription" ColumnName="WorkTypeLHSDescription" />
+                <ScalarProperty Name="WorkType" ColumnName="WorkType" />
+                <ScalarProperty Name="ADASTypeDescription" ColumnName="ADASTypeDescription" />
+                <ScalarProperty Name="ADASType" ColumnName="ADASType" />
+                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+                <ScalarProperty Name="AgreedDate" ColumnName="AgreedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="uspDropCreatePopulateBankHolidayTable" FunctionName="DPStatServiceModel.Store.uspDropCreatePopulateBankHolidayTable" />
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

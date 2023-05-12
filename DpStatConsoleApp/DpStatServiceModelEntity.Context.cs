@@ -27,27 +27,38 @@ namespace DpStatConsoleApp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<AreaParam> AreaParams { get; set; }
+        public virtual DbSet<BankHoliday> BankHolidays { get; set; }
+        public virtual DbSet<ADASTypeParam> ADASTypeParams { get; set; }
         public virtual DbSet<AvailableAppointmentDate> AvailableAppointmentDates { get; set; }
+        public virtual DbSet<AvailableAppointmentDates_bkup> AvailableAppointmentDates_bkup { get; set; }
+        public virtual DbSet<BNNoParam> BNNoParams { get; set; }
+        public virtual DbSet<BNStyleParam> BNStyleParams { get; set; }
+        public virtual DbSet<BranchMemberParam> BranchMemberParams { get; set; }
         public virtual DbSet<InputFetchAvailableAppointmentDate> InputFetchAvailableAppointmentDates { get; set; }
+        public virtual DbSet<LocationTypeParam> LocationTypeParams { get; set; }
+        public virtual DbSet<WorkTypeLHSParam> WorkTypeLHSParams { get; set; }
+        public virtual DbSet<WorkTypeRHSParam> WorkTypeRHSParams { get; set; }
+        public virtual DbSet<AvailableDates_BASE_view> AvailableDates_BASE_view { get; set; }
     
         public virtual ObjectResult<UspGetInputFetchAvailableAppointmentDate_Result> UspGetInputFetchAvailableAppointmentDate()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<UspGetInputFetchAvailableAppointmentDate_Result>("UspGetInputFetchAvailableAppointmentDate");
         }
     
-        public virtual int uspInsertAvailableAppointmentDates(Nullable<System.DateTime> aggreedDate, string branchNo, string bNStyle, string locationType, Nullable<System.DateTime> availableDate)
+        public virtual int uspInsertAvailableAppointmentDates(Nullable<System.DateTime> agreedDate, string branchNo, string bNNo, string locationType, Nullable<System.DateTime> availableDate, string aDASType, string workType)
         {
-            var aggreedDateParameter = aggreedDate.HasValue ?
-                new ObjectParameter("AggreedDate", aggreedDate) :
-                new ObjectParameter("AggreedDate", typeof(System.DateTime));
+            var agreedDateParameter = agreedDate.HasValue ?
+                new ObjectParameter("AgreedDate", agreedDate) :
+                new ObjectParameter("AgreedDate", typeof(System.DateTime));
     
             var branchNoParameter = branchNo != null ?
                 new ObjectParameter("BranchNo", branchNo) :
                 new ObjectParameter("BranchNo", typeof(string));
     
-            var bNStyleParameter = bNStyle != null ?
-                new ObjectParameter("BNStyle", bNStyle) :
-                new ObjectParameter("BNStyle", typeof(string));
+            var bNNoParameter = bNNo != null ?
+                new ObjectParameter("BNNo", bNNo) :
+                new ObjectParameter("BNNo", typeof(string));
     
             var locationTypeParameter = locationType != null ?
                 new ObjectParameter("LocationType", locationType) :
@@ -57,7 +68,25 @@ namespace DpStatConsoleApp
                 new ObjectParameter("AvailableDate", availableDate) :
                 new ObjectParameter("AvailableDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspInsertAvailableAppointmentDates", aggreedDateParameter, branchNoParameter, bNStyleParameter, locationTypeParameter, availableDateParameter);
+            var aDASTypeParameter = aDASType != null ?
+                new ObjectParameter("ADASType", aDASType) :
+                new ObjectParameter("ADASType", typeof(string));
+    
+            var workTypeParameter = workType != null ?
+                new ObjectParameter("WorkType", workType) :
+                new ObjectParameter("WorkType", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("uspInsertAvailableAppointmentDates", agreedDateParameter, branchNoParameter, bNNoParameter, locationTypeParameter, availableDateParameter, aDASTypeParameter, workTypeParameter);
+        }
+    
+        public virtual ObjectResult<uspGetInputFetchAvailableAppointmentDate1_Result> uspGetInputFetchAvailableAppointmentDate1()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspGetInputFetchAvailableAppointmentDate1_Result>("uspGetInputFetchAvailableAppointmentDate1");
+        }
+    
+        public virtual ObjectResult<string> uspDropCreatePopulateBankHolidayTable()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("uspDropCreatePopulateBankHolidayTable");
         }
     }
 }

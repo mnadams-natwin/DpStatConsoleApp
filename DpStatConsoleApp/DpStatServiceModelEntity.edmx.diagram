@@ -4,9 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4212fa06c7354ac7b82ab164d2982182" Name="Diagram1">
-        <EntityTypeShape EntityType="DPStatServiceModel.AvailableAppointmentDate" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DPStatServiceModel.InputFetchAvailableAppointmentDate" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="4212fa06c7354ac7b82ab164d2982182" Name="Diagram1" ShowGrid="true">
+        <EntityTypeShape EntityType="DPStatServiceModel.AreaParam" Width="2.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.BankHoliday" Width="2.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.ADASTypeParam" Width="2.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.AvailableAppointmentDate" Width="2.5" PointX="3.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.AvailableAppointmentDates_bkup" Width="2.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.BNNoParam" Width="2.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.BNStyleParam" Width="2.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.BranchMemberParam" Width="2.5" PointX="3.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.InputFetchAvailableAppointmentDate" Width="2.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.LocationTypeParam" Width="2.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.WorkTypeLHSParam" Width="2.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.WorkTypeRHSParam" Width="2.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DPStatServiceModel.AvailableDates_BASE_view" Width="2.5" PointX="13.5" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

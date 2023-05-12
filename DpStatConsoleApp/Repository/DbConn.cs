@@ -17,7 +17,14 @@ namespace DpStatConsoleApp.Repository
         //To Handle connection related activities    
         internal void conHandle()
         {
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString());
+            
+            if (ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString() != null)
+            {
+                string tmpConString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ToString().Replace("XXXHidenPasswordXXX", "G3tM31n");
+
+                con = new SqlConnection(tmpConString);
+            }
+            
         }
 
     }

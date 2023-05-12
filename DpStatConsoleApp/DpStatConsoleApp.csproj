@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.props" Condition="Exists('..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -10,14 +10,32 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DpStatConsoleApp</RootNamespace>
     <AssemblyName>DpStatConsoleApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>bcedf4fb</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>7fae1b24</NuGetPackageImportStamp>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <ProjectConfigFileName>App.Config</ProjectConfigFileName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>Z:\safe_xfer\LeadTime-DPStatService\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\nwtwpc10itma01\safe_xfer\LeadTime-DPStatService\</InstallUrl>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,30 +56,75 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DpStatConsoleApp.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'LiveRelease|AnyCPU'">
+    <OutputPath>bin\LiveRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A54D76BA629F4F18E1764326C481A29C547BCC09</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DpStatConsoleApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,7 +132,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADASTypeParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AreaParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="AvailableAppointmentDate.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableAppointmentDates_bkup.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AvailableDates_BASE_view.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BankHoliday.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNNoParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BNStyleParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BranchMemberParam.cs">
       <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="DpStatServiceModelEntity.Context.cs">
@@ -90,29 +177,86 @@
     <Compile Include="InputFetchAvailableAppointmentDate.cs">
       <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
     </Compile>
+    <Compile Include="LocationTypeParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AvailableAppointmentDatesModel.cs" />
     <Compile Include="Models\InputFetchAvailableAppointmentDateModel.cs" />
+    <Compile Include="Models\RESTAvailableAppointmentModel.cs" />
+    <Compile Include="Models\RESTResponseModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AvailableAppointmentDatesRepo.cs" />
     <Compile Include="Repository\DbConn.cs" />
     <Compile Include="Repository\InputFetchAvailableAppointmentDateRepo.cs" />
+    <Compile Include="Repository\RESTMethods.cs" />
+    <Compile Include="uspGetInputFetchAvailableAppointmentDate1_Result.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="UspGetInputFetchAvailableAppointmentDate_Result.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkTypeLHSParam.cs">
+      <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkTypeRHSParam.cs">
       <DependentUpon>DpStatServiceModelEntity.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <EntityDeploy Include="DpStatServiceModelEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DpStatServiceModelEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="RepositoryClassDiagram.cd" />
+    <None Include="ModelClassDiagram.cd" />
+    <None Include="DpStatConsoleApp_TemporaryKey.pfx" />
     <None Include="DpStatServiceModelEntity.edmx.diagram">
       <DependentUpon>DpStatServiceModelEntity.edmx</DependentUpon>
     </None>
+    <None Include="log4net.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\webjob-publish-settings.json" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DpStatsConsoleSql\Create-ADASTypeParam.Table.sql" />
+    <Content Include="DpStatsConsoleSql\Create-AvailableAppointmentDates.sql" />
+    <Content Include="DpStatsConsoleSql\Create-AvailableDates-Base_view.sql" />
+    <Content Include="DpStatsConsoleSql\Create-AvailableDates-Branch_view.sql" />
+    <Content Include="DpStatsConsoleSql\Create-AvailableDates-Mobile_view.sql" />
+    <Content Include="DpStatsConsoleSql\Create-BankHolidays.sql" />
+    <Content Include="DpStatsConsoleSql\Create-BankHoliday_functionsANDTables.sql" />
+    <Content Include="DpStatsConsoleSql\Create-WorkTypeLHSParam.Table.sql" />
+    <Content Include="DpStatsConsoleSql\Create-WorkTypeRHSParam.Table.sql" />
+    <Content Include="DpStatsConsoleSql\CreateInputParameters.sql" />
+    <Content Include="DpStatsConsoleSql\fn_BankHoliday.sql" />
+    <Content Include="DpStatsConsoleSql\fn_EasterMondayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\fn_EasterSundayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\fn_GoodFridayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\fn_MayBankHolidayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\fn_SpringBankHolidayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\fn_SummerBankHolidayByYear.sql" />
+    <Content Include="DpStatsConsoleSql\INTO_DPStatService_AreaParam.sql" />
+    <Content Include="DpStatsConsoleSql\INTO_DPStatService_BranchMemberParam.sql" />
+    <Content Include="DpStatsConsoleSql\INTO_DPStatService_BranchParams.sql" />
+    <Content Include="DpStatsConsoleSql\udf_CountWorkingDays.sql" />
+    <Content Include="DpStatsConsoleSql\uspDropCreatePopulateBankHolidayTable.sql" />
+    <Content Include="DpStatsConsoleSql\uspGetInputFetchAvailableAppointmentDate.sql" />
+    <Content Include="DpStatsConsoleSql\uspInsertAvailableAppointmentDates.sql" />
     <Content Include="DpStatServiceModelEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DpStatServiceModelEntity.edmx</DependentUpon>
@@ -130,16 +274,31 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.props'))" />
+    <Error Condition="!Exists('..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.targets'))" />
   </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.targets" Condition="Exists('..\packages\AppConfigTransform.1.0.0\build\AppConfigTransform.targets')" />
+  <Import Project="..\packages\Microsoft.Web.WebJobs.Publish.1.0.3\tools\webjobs.targets" Condition="Exists('..\packages\Microsoft.Web.WebJobs.Publish.1.0.3\tools\webjobs.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

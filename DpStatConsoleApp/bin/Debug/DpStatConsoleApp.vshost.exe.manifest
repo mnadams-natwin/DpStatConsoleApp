@@ -1,11 +1,374 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
-  <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
-  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="DpStatConsoleApp.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="DpStatConsoleApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="DpStatConsoleApp.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
     <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <requestedExecutionLevel level="asInvoker" uiAccess="false"/>
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>
-</assembly>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dapper.dll" size="194560">
+      <assemblyIdentity name="Dapper" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>WPXBXLlyktCsvYkgWlSPFQyJ0h7Ss3KfGQQOpJCLkqQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DpStatConsoleApp.exe" size="87000">
+      <assemblyIdentity name="DpStatConsoleApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1pWF0em433yx5VA0jRrRENBEIXJUYpBWbmrv3cnuW8Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5196496">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7W69dJBS+QGPZplnGuVGmt7fCGz4sb1CVrvpxOf2/wU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="621264">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ob9snjgg6D9D6fIN19mwozYqkxRvCv4LEzAYXi1RsMs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="log4net.dll" size="270336">
+      <assemblyIdentity name="log4net" version="2.0.12.0" publicKeyToken="669E0DDF0BB1AA2A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>iWq5ysQeOXd5K6IDTqhzBhDCd5+lG6tr7UJglOqNPs0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="701992">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tiSUnfiw46YVP9+3MKfG9JkLZZLuDZIuF4hDPSdmEPM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RestSharp.dll" size="192000">
+      <assemblyIdentity name="RestSharp" version="106.11.7.0" publicKeyToken="598062E77F915F75" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Z24A6PgbbCXhIid9VaVtKJJKTMME8WCtHfuAPo0upZQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Net.Http.Formatting.dll" size="178808">
+      <assemblyIdentity name="System.Net.Http.Formatting" version="5.2.7.0" publicKeyToken="31BF3856AD364E35" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>e1itxuI7JM1mFbNehIoAK9oFOibUj53a+s/ICY6XxJw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="DpStatConsoleApp.exe.config" size="2457">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>69FHIcQC3bmG8oaKfWp8XEfa7kE3KVruKkJjaiMJE98=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-ADASTypeParam.Table.sql" size="3326">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>j0WTuvlKeS6pg4dI8lVZhUqxmKwnbJuEHQOfHeobV8Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-AvailableAppointmentDates.sql" size="516">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QyISwVKKtVwtc3rfQN/1AxTJMBGeqJYF9ouwjZyGYBo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-AvailableDates-Base_view.sql" size="3234">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tdlq6xK+mruOrQmAgsj5bEb2vLxmZ/f6swBfIXOQ6Nc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-AvailableDates-Branch_view.sql" size="720">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cj2Y5Wx8VGCWbZsQKjFbw8IOcfQgJGTVitc8fjuynoY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-AvailableDates-Mobile_view.sql" size="626">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2pMzTyzMsmz1O4S+unGpKI0YETrqgJshTGfXERZ12aI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-BankHoliday_functionsANDTables.sql" size="3885">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1K9VIea1Si5D9mSueZuD+bc8iR9AmOCVuyC49UWGnzA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-BankHolidays.sql" size="175">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>11zzMDZWTXQunaMF1vi/ASD2YE3Qcg8w0DT+5SwEc74=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\CreateInputParameters.sql" size="1313">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VZ3jx9DvyahH4W58VX3ADstvz9g9OrkpzFegszp+4S8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-WorkTypeLHSParam.Table.sql" size="6196">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>scI7aRdSeP7NSS+lxS6l8f6Bq9Xf0JX1Q2TlRpyFqDM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\Create-WorkTypeRHSParam.Table.sql" size="5872">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>17XyLUXcSpPhA7/qMsluqcFn1rzYtER7Fe638DxbPfY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_BankHoliday.sql" size="478">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nQYkGJVmW8Rpmd0j9HLk1Mck93s5g0joRM9DWUUi7LQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_EasterMondayByYear.sql" size="196">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9/7OohFGJymlwB6vyTtma+eSlo+xQlhNpZJwgod1QAs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_EasterSundayByYear.sql" size="842">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>zEdpBFp5qMP1RDuc85N/j88mj9frjs4E3QrMnuMVYPw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_GoodFridayByYear.sql" size="197">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>i8fl718sdPQFW8UFYYfEFcFPI5Z5JncuO+YTI1JF43k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_MayBankHolidayByYear.sql" size="508">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cmL8A56QPg4y3JrTktK7uD8MJv7aXPpuaEH4nuVqkrU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_SpringBankHolidayByYear.sql" size="509">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ynn9cc20QM/DIvjNLkptHqXcx+iZzbwV9jGr+xguPi0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\fn_SummerBankHolidayByYear.sql" size="513">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>33B4JmHJUEI8cjyjnqbkjxvqhxsf7SK/dXA4bymmPqM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\INTO_DPStatService_AreaParam.sql" size="673">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8Gi52+E96VxIk8q9ak4mB6Tlokj0ulrWez3Wugx1Kmg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\INTO_DPStatService_BranchParams.sql" size="435">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7clyuwD3/zNBkG6xLAR+DavTpCX/jatuJFNFBGDIU9I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\udf_CountWorkingDays.sql" size="1751">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>y9p76bj8Q2voUdz9943BGGwMjMakAn1+xY/iF5MV0tc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\uspDropCreatePopulateBankHolidayTable.sql" size="6232">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LK/o8rjFhW+wrpxAd2tNcHONf+MtHuQ4Eab+hL1cgCs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\uspGetInputFetchAvailableAppointmentDate.sql" size="603">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>BYyzXbjEFKe1+fACLbEBcvElDvTu3N5PvKkKqt5fr/k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatsConsoleSql\uspInsertAvailableAppointmentDates.sql" size="897">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IXmkR4A3oPGcwnoo35R+dxpKoIF3ObzwZpez6l2XHxY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatServiceModelEntity.Context.tt" size="22948">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IeJ1lACqGNjNN/j/YogRG2U/8DYB6zrcFxML7qt73GA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DpStatServiceModelEntity.tt" size="25293">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ImRSWChHjYUG15LoQeNv6lvI91y9h6qIakn1/zZOAYo=</dsig:DigestValue>
+    </hash>
+  </file>
+</asmv1:assembly>

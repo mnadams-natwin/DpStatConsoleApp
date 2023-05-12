@@ -19,5 +19,7 @@ namespace DpStatConsoleApp.Models
         public string WorkBranch { get; set; }
         public string WorkType { get; set; }
         public string Postcode { get; set; }
+        public string AgreedDate { get; set; }
+        public string DaysLimit { get; set; }
     }
 }

@@ -15,10 +15,12 @@ namespace DpStatConsoleApp
     public partial class AvailableAppointmentDate
     {
         public int ID { get; set; }
-        public Nullable<System.DateTime> AggreedDate { get; set; }
+        public Nullable<System.DateTime> AgreedDate { get; set; }
         public string BranchNo { get; set; }
-        public string BNStyle { get; set; }
+        public string BNNo { get; set; }
         public string LocationType { get; set; }
         public Nullable<System.DateTime> AvailableDate { get; set; }
+        public string ADASType { get; set; }
+        public string WorkType { get; set; }
     }
 }

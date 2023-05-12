@@ -19,6 +19,8 @@ namespace DpStatConsoleApp.Models
         public string BNStyle { get; set; }
         public string LocationType { get; set; }
         public Nullable<System.DateTime> AvailableDate { get; set; }
+        public string ADASType { get; set; }
+        public string WorkType { get; set; }
 
     }
 }
